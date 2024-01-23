@@ -197,8 +197,10 @@ export default function Profile() {
                             <Link to={`/listings/${listing._id}`} className="flex-1 text-slate-700 font-semibold hover:underline truncate">
                                 <p>{listing.name}</p>
                             </Link>
-                            <div className="flex gap-2">
-                                <button><FaRegEdit className="w-6 h-6 text-green-600 hover:opacity-70" /></button>
+                            <div className="flex items-center gap-2">
+                                <Link to={`/update-listing/${listing._id}`}>
+                                    <button><FaRegEdit className="w-6 h-6 text-green-600 hover:opacity-70 pt-1" /></button>
+                                </Link>
                                 <button onClick={() => handleDeleteListing(listing._id)}><MdDeleteForever className="w-6 h-6 text-red-600 hover:opacity-70" /></button>
                             </div>
                         </div>
