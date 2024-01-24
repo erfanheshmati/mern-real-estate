@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import SwiperCore from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css/bundle';
 
 import { FaBath, FaBed, FaChair, FaMapMarkedAlt, FaMapMarkerAlt, FaParking, FaShare, } from 'react-icons/fa';
@@ -15,7 +15,7 @@ import Contact from "../components/Contact"
 
 
 export default function Listing() {
-    SwiperCore.use([Navigation]);
+    SwiperCore.use([Navigation, Autoplay]);
     const [listing, setListing] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -53,7 +53,7 @@ export default function Listing() {
             {error && (<p className='text-center my-7 text-2xl'>Something went wrong!</p>)}
             {listing && !loading && !error && (
                 <div>
-                    <Swiper navigation>
+                    <Swiper navigation autoplay>
                         {listing.imageURLs.map((url) => (
                             <SwiperSlide key={url}>
                                 <div className='h-[550px]' style={{ background: `url(${url}) center no-repeat`, backgroundSize: 'cover' }}></div>

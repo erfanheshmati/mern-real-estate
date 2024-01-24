@@ -119,7 +119,7 @@ export default function CreateListing() {
             <h1 className="text-3xl font-semibold text-center my-7">Create a Listing</h1>
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
                 <div className="flex flex-col gap-4 flex-1">
-                    <input type="text" placeholder="Name" className="border p-3 rounded-lg" id="name" maxLength="62" minLength="10" required onChange={handleChange} value={formData.name} />
+                    <input type="text" placeholder="Name" className="border p-3 rounded-lg" id="name" maxLength="62" minLength="3" required onChange={handleChange} value={formData.name} />
                     <textarea type="text" placeholder="Description" className="border p-3 rounded-lg" id="description" required onChange={handleChange} value={formData.description} />
                     <input type="text" placeholder="Address" className="border p-3 rounded-lg" id="address" required onChange={handleChange} value={formData.address} />
                     <div className="flex gap-6 flex-wrap">
